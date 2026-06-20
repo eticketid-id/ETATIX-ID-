@@ -76,6 +76,39 @@ footer{background:#0d1f63;color:#fff;padding:40px 20px;margin-top:30px}
 .mobile-buy a{display:block;background:#345eea;color:#fff;text-align:center;padding:16px;border-radius:16px;text-decoration:none;font-weight:700;}
 @media(max-width:768px){.mobile-buy{display:block;}footer{padding-bottom:90px;}}
 
+
+/* ===== ULTRA V3 ===== */
+.logo{display:flex;align-items:center;gap:10px}
+.logo-text{color:#fff;font-size:28px;font-weight:700}
+.logo img{height:52px;width:auto}
+
+.drawer{
+position:fixed;top:0;right:-320px;width:300px;height:100%;
+background:#fff;z-index:2000;transition:.3s;padding:24px;
+box-shadow:-10px 0 30px rgba(0,0,0,.15)
+}
+.drawer.open{right:0}
+.drawer a{display:block;padding:14px 0;text-decoration:none;color:#111;font-weight:600}
+
+.search-popup{
+display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);
+z-index:2100;align-items:center;justify-content:center;
+}
+.search-popup.active{display:flex}
+.search-box{background:#fff;padding:20px;border-radius:20px;width:90%;max-width:500px}
+.search-box input{width:100%;padding:14px;border:1px solid #ddd;border-radius:12px}
+
+.action-row{display:flex;gap:12px;padding:0 20px 20px;flex-wrap:wrap}
+.action-btn{
+border:none;background:#eef2ff;color:#345eea;
+padding:12px 16px;border-radius:14px;font-weight:600;cursor:pointer
+}
+.toast{
+position:fixed;top:20px;left:50%;transform:translateX(-50%);
+background:#111;color:#fff;padding:12px 18px;border-radius:10px;
+display:none;z-index:3000
+}
+
 </style>
 </head>
 <body>
@@ -83,9 +116,7 @@ footer{background:#0d1f63;color:#fff;padding:40px 20px;margin-top:30px}
 <div class="container">
 
 <nav class="navbar">
-<div class="logo">
-<img src="logo-etatix.png" alt="ETATIX">
-</div>
+<div class="logo"><img src="logo-etatix-icon.png" alt="ETATIX"><span class="logo-text">ETATIX</span></div>
 
 <div class="right">
 <div class="lang">🇮🇩 ID</div>
@@ -101,6 +132,7 @@ footer{background:#0d1f63;color:#fff;padding:40px 20px;margin-top:30px}
 <div class="badge"><i class="fa-solid fa-music"></i> Musik</div>
 
 <div class="countdown-box">🔥 Event dimulai dalam: <span id="countdown">Loading...</span></div>
+
 <div class="title">
 <h1>Jomlo Festival 2026 Chapter Jogja</h1>
 </div>
@@ -142,19 +174,61 @@ footer{background:#0d1f63;color:#fff;padding:40px 20px;margin-top:30px}
 <a href="#">Syarat & Ketentuan</a>
 </div>
 
+
 <div class="content">
 <h2>Deskripsi</h2>
-<p>Melalui irama yang mengalun dan langkah yang menari, Kontener Production kembali menghadirkan Jomlo Festival. Setelah sukses dengan ribuan pengunjung, festival ini hadir kembali dengan konsep yang lebih meriah bersama deretan bintang tamu terbaik.</p>
-<p>Jomlo Festival siap membawa pengalaman musik, hiburan dan kebersamaan yang tak terlupakan.</p>
+
+<p>Jomlo Festival 2026 Chapter Jogja hadir sebagai perayaan musik, kreativitas, dan kebersamaan yang dirancang untuk menghadirkan pengalaman hiburan yang berbeda. Acara ini mempertemukan penonton dari berbagai daerah dalam satu malam penuh energi, pertunjukan spektakuler, dan suasana yang tidak terlupakan.</p>
+
+<p>Setelah sukses pada penyelenggaraan sebelumnya, tahun ini Jomlo Festival kembali dengan konsep yang lebih besar, area venue yang lebih nyaman, serta dukungan tata panggung dan tata cahaya yang lebih modern. Pengunjung akan menikmati pengalaman festival yang dirancang untuk memberikan kenyamanan sekaligus hiburan maksimal.</p>
+
+<p>Festival ini menghadirkan deretan penampil pilihan yang siap membawakan lagu-lagu terbaik mereka. Setiap penampilan dirancang untuk menciptakan momen spesial yang dapat dinikmati bersama teman, pasangan, maupun komunitas.</p>
+
+<p>Selain pertunjukan utama, pengunjung juga dapat menikmati berbagai aktivitas pendukung yang tersedia di area acara. Beragam tenant makanan dan minuman, area foto, serta berbagai pengalaman interaktif akan menambah keseruan selama festival berlangsung.</p>
+
+<p>Jomlo Festival bukan hanya tentang musik, tetapi juga tentang membangun koneksi dan menciptakan kenangan baru. Acara ini menjadi tempat berkumpulnya orang-orang yang memiliki semangat yang sama untuk menikmati hiburan berkualitas.</p>
+
+<h2>Highlight Acara</h2>
+<ul>
+<li>Penampilan spesial dari musisi dan performer pilihan.</li>
+<li>Tata panggung profesional dengan kualitas audio terbaik.</li>
+<li>Area kuliner dan tenant pilihan.</li>
+<li>Spot foto dan area interaktif.</li>
+<li>Pengalaman festival yang aman dan nyaman.</li>
+</ul>
+
+<h2>Benefit Pembeli Tiket</h2>
+<ul>
+<li>Akses masuk ke area festival sesuai kategori tiket.</li>
+<li>Akses menikmati seluruh penampilan utama.</li>
+<li>Akses area kuliner dan tenant selama acara berlangsung.</li>
+<li>Kesempatan mengikuti aktivitas interaktif yang tersedia.</li>
+</ul>
+
+<h2>Informasi Venue & Check-in</h2>
+<p>Pengunjung disarankan hadir minimal 60 menit sebelum acara dimulai untuk proses penukaran tiket dan pemeriksaan keamanan. Siapkan e-ticket dan identitas yang masih berlaku saat memasuki area venue.</p>
+
+<h2>Kebijakan Refund & Reschedule</h2>
+<p>Apabila terjadi perubahan jadwal karena keadaan tertentu, informasi resmi akan diumumkan melalui kanal resmi penyelenggara. Kebijakan refund dan reschedule mengikuti ketentuan yang ditetapkan oleh penyelenggara acara.</p>
 
 <h2 style="margin-top:30px">Syarat & Ketentuan</h2>
 <ol>
-<li>Tiket hanya berlaku untuk satu orang.</li>
-<li>Tiket yang sudah dibeli tidak dapat ditukar atau dikembalikan.</li>
-<li>Pengunjung wajib membawa identitas resmi.</li>
-<li>Dilarang membawa senjata tajam, narkotika, dan barang berbahaya.</li>
-<li>Penyelenggara berhak menolak pengunjung yang melanggar aturan.</li>
-<li>Dengan membeli tiket, pengunjung dianggap menyetujui seluruh ketentuan acara.</li>
+<li>Tiket yang telah dibeli tidak dapat dibatalkan atau diuangkan kembali kecuali terdapat kebijakan khusus dari penyelenggara.</li>
+<li>Satu tiket hanya berlaku untuk satu orang dan satu kali masuk.</li>
+<li>Pengunjung wajib menunjukkan e-ticket yang sah saat proses check-in.</li>
+<li>Pengunjung wajib membawa identitas resmi yang masih berlaku.</li>
+<li>Panitia berhak melakukan pemeriksaan barang bawaan.</li>
+<li>Dilarang membawa senjata tajam, narkotika, bahan peledak, atau barang berbahaya lainnya.</li>
+<li>Dilarang membawa minuman beralkohol dari luar area acara.</li>
+<li>Dilarang melakukan tindakan yang mengganggu kenyamanan pengunjung lain.</li>
+<li>Pengunjung wajib menjaga barang pribadi masing-masing.</li>
+<li>Penyelenggara tidak bertanggung jawab atas kehilangan barang pribadi.</li>
+<li>Tiket yang hilang atau rusak tidak dapat diganti.</li>
+<li>Pengunjung wajib mematuhi seluruh arahan petugas dan panitia.</li>
+<li>Dokumentasi foto dan video selama acara dapat digunakan untuk kebutuhan promosi.</li>
+<li>Jadwal acara dapat berubah sewaktu-waktu apabila diperlukan.</li>
+<li>Penyelenggara berhak menolak atau mengeluarkan pengunjung yang melanggar peraturan.</li>
+<li>Dengan membeli tiket, pengunjung dianggap memahami dan menyetujui seluruh syarat dan ketentuan yang berlaku.</li>
 </ol>
 </div>
 
@@ -203,6 +277,54 @@ const h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 const m=Math.floor((distance%(1000*60*60))/(1000*60));
 const el=document.getElementById("countdown");
 if(el){el.innerHTML=d+" Hari "+h+" Jam "+m+" Menit";}},1000);
+</script>
+
+
+<div class="drawer" id="drawer">
+<h3>Menu ETATIX</h3>
+<a href="#">Beranda</a>
+<a href="#">Event</a>
+<a href="#">Tiket Saya</a>
+<a href="#">Kontak</a>
+</div>
+
+<div class="search-popup" id="searchPopup">
+<div class="search-box">
+<input type="text" placeholder="Cari Event...">
+</div>
+</div>
+
+<div class="toast" id="toast">Link berhasil disalin</div>
+
+<script>
+document.querySelectorAll('.btn')[1]?.addEventListener('click',()=>{
+document.getElementById('drawer').classList.toggle('open');
+});
+
+document.querySelectorAll('.btn')[0]?.addEventListener('click',()=>{
+document.getElementById('searchPopup').classList.add('active');
+});
+
+document.getElementById('searchPopup').addEventListener('click',(e)=>{
+if(e.target.id==='searchPopup'){
+e.target.classList.remove('active');
+}
+});
+
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+const t=document.getElementById('toast');
+t.style.display='block';
+setTimeout(()=>t.style.display='none',2000);
+}
+
+function shareEvent(){
+if(navigator.share){
+navigator.share({title:document.title,url:window.location.href});
+}else{
+copyLink();
+}
+}
 </script>
 
 </body>
