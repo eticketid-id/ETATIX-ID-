@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ETATIX Event Detail Page - Optimized Version">
+<meta name="theme-color" content="#17349f">
 <title>ETATIX - Event Detail</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -390,5 +392,26 @@ this.style.opacity='0.9';
 });
 </script>
 
+
+<script>
+// Improved countdown
+(function(){
+const el=document.getElementById('countdown');
+if(!el) return;
+const target=new Date("2026-11-14T15:00:00").getTime();
+function update(){
+ const now=Date.now();
+ let diff=target-now;
+ if(diff<=0){el.textContent='Event sedang berlangsung'; return;}
+ const d=Math.floor(diff/86400000);
+ const h=Math.floor((diff%86400000)/3600000);
+ const m=Math.floor((diff%3600000)/60000);
+ const s=Math.floor((diff%60000)/1000);
+ el.textContent=`${d} Hari ${h} Jam ${m} Menit ${s} Detik`;
+}
+update();
+setInterval(update,1000);
+})();
+</script>
 </body>
 </html>
