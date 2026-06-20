@@ -4,177 +4,520 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ETATIX - Event Detail</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:#f3f5f9;color:#111}
-.container{max-width:900px;margin:auto;background:#fff;min-height:100vh}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-/* NAVBAR */
-.navbar{background:#17349f;height:92px;padding:0 18px;display:flex;align-items:center;justify-content:space-between}
-.logo img{height:50px;max-width:260px;width:auto;object-fit:contain}
-.right{display:flex;gap:12px;align-items:center}
-.lang{background:#2447d7;color:#fff;padding:14px 20px;border-radius:24px;font-weight:600}
-.btn{width:58px;height:58px;border-radius:50%;background:#2447d7;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px}
+body{
+font-family:'Poppins',sans-serif;
+background:#f3f5f9;
+color:#111;
+}
 
-/* CONTENT */
-.banner img{width:100%;display:block}
-.badge{display:inline-flex;gap:8px;background:#e8edff;color:#4562d8;padding:10px 16px;border-radius:12px;font-weight:600;margin:20px}
-.title{padding:0 20px 20px}
-.title h1{font-size:clamp(30px,5vw,54px)}
-.card{padding:20px}
-.section-title{font-size:18px;color:#7c8597;margin-bottom:16px;font-weight:600}
-.detail{display:flex;gap:15px;margin-bottom:18px}
-.icon{width:46px;height:46px;border-radius:14px;background:#e8edff;color:#4562d8;display:flex;align-items:center;justify-content:center}
-.organizer{display:flex;align-items:center;gap:15px}
-.organizer-logo{width:60px;height:60px;background:#eef1f7;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#4562d8}
-.social{display:flex;gap:12px;flex-wrap:wrap}
-.social a{text-decoration:none;background:#eef1f7;color:#4562d8;padding:12px 18px;border-radius:14px;font-weight:600}
+.container{
+max-width:900px;
+margin:auto;
+background:#fff;
+min-height:100vh;
+}
 
-.tabs{display:flex;border-bottom:1px solid #ddd;padding:0 20px;gap:25px}
-.tabs a{text-decoration:none;color:#7c8597;padding:15px 0;font-weight:600}
-.tabs a.active{color:#111;border-bottom:3px solid #4562d8}
+/* ================= NAVBAR ================= */
 
-.content{padding:20px;line-height:1.8}
-.content h2{margin-bottom:15px}
-ol{padding-left:25px}
-li{margin-bottom:10px}
+.navbar{
+background:#17349f;
+height:92px;
+padding:0 18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:2px solid rgba(255,255,255,.15);
+}
 
-/* TICKET BOX */
-.ticket-box{margin:20px;background:#eef2f7;border-radius:24px;padding:20px}
-.ticket-top{display:flex;justify-content:space-between;margin-bottom:20px}
-.price{font-size:22px;font-weight:700}
-.buy-btn{display:block;text-align:center;background:#345eea;color:#fff;text-decoration:none;padding:18px;border-radius:18px;font-weight:700}
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
 
-/* FOOTER */
-footer{background:#0d1f63;color:#fff;padding:40px 20px;margin-top:30px}
-.footer-logo img{height:46px;margin-bottom:15px}
-.footer-grid{display:grid;gap:20px}
-.footer-title{font-weight:700;margin-bottom:10px}
-.footer-link{display:block;color:#d8dfff;text-decoration:none;margin-bottom:8px}
-.copy{text-align:center;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;margin-top:20px;font-size:14px}
+.logo img{
+width:42px;
+height:auto;
+object-fit:contain;
+}
+
+.logo-text{
+color:#fff;
+font-size:28px;
+font-weight:700;
+letter-spacing:.5px;
+line-height:1;
+}
+
+.right{
+display:flex;
+gap:12px;
+align-items:center;
+}
+
+.lang{
+background:#2447d7;
+color:#fff;
+padding:14px 20px;
+border-radius:28px;
+font-weight:600;
+font-size:18px;
+}
+
+.btn{
+width:58px;
+height:58px;
+border-radius:50%;
+background:#2447d7;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+}
+
+/* ================= BANNER ================= */
+
+.banner img{
+width:100%;
+display:block;
+}
+
+/* ================= CONTENT ================= */
+
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+background:#e8edff;
+color:#4562d8;
+padding:12px 18px;
+border-radius:14px;
+font-weight:600;
+margin:20px;
+font-size:16px;
+}
+
+.title{
+padding:0 20px 20px;
+}
+
+.title h1{
+font-size:clamp(32px,5vw,54px);
+font-weight:800;
+}
+
+.card{
+padding:20px;
+}
+
+.section-title{
+font-size:18px;
+color:#7c8597;
+margin-bottom:16px;
+font-weight:700;
+}
+
+.detail{
+display:flex;
+gap:15px;
+margin-bottom:18px;
+align-items:center;
+}
+
+.icon{
+width:52px;
+height:52px;
+border-radius:14px;
+background:#e8edff;
+color:#4562d8;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+}
+
+.organizer{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.organizer-logo{
+width:60px;
+height:60px;
+background:#eef1f7;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:800;
+color:#4562d8;
+font-size:22px;
+}
+
+.social{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.social a{
+text-decoration:none;
+background:#eef1f7;
+color:#4562d8;
+padding:12px 18px;
+border-radius:14px;
+font-weight:600;
+}
+
+/* ================= TABS ================= */
+
+.tabs{
+display:flex;
+gap:25px;
+padding:0 20px;
+border-bottom:1px solid #ddd;
+}
+
+.tabs a{
+text-decoration:none;
+color:#7c8597;
+padding:15px 0;
+font-weight:600;
+}
+
+.tabs a.active{
+color:#111;
+border-bottom:3px solid #4562d8;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+padding:20px;
+line-height:1.8;
+}
+
+.content h2{
+margin-bottom:15px;
+}
+
+ol{
+padding-left:25px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+/* ================= TICKET ================= */
+
+.ticket-box{
+margin:20px;
+background:#eef2f7;
+border-radius:24px;
+padding:20px;
+}
+
+.ticket-top{
+display:flex;
+justify-content:space-between;
+margin-bottom:20px;
+}
+
+.price{
+font-size:24px;
+font-weight:700;
+}
+
+.buy-btn{
+display:block;
+text-align:center;
+background:#345eea;
+color:#fff;
+text-decoration:none;
+padding:18px;
+border-radius:18px;
+font-weight:700;
+font-size:18px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#0d1f63;
+color:#fff;
+padding:40px 20px;
+margin-top:30px;
+}
+
+.footer-brand{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.footer-brand img{
+width:40px;
+}
+
+.footer-brand span{
+font-size:24px;
+font-weight:700;
+}
+
+.footer-grid{
+display:grid;
+gap:20px;
+}
+
+.footer-title{
+font-weight:700;
+margin-bottom:10px;
+}
+
+.footer-link{
+display:block;
+color:#d8dfff;
+text-decoration:none;
+margin-bottom:8px;
+}
+
+.copy{
+text-align:center;
+border-top:1px solid rgba(255,255,255,.15);
+padding-top:20px;
+margin-top:20px;
+font-size:14px;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:768px){
-.logo img{height:42px}
-.btn{width:54px;height:54px}
-.lang{padding:12px 16px}
+
+.logo img{
+width:36px;
+}
+
+.logo-text{
+font-size:24px;
+}
+
+.lang{
+padding:12px 16px;
+font-size:16px;
+}
+
+.btn{
+width:54px;
+height:54px;
+}
+
+.title h1{
+font-size:28px;
+}
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
+<!-- NAVBAR -->
 <nav class="navbar">
+
 <div class="logo">
-<img src="logo-etatix.png" alt="ETATIX">
+<img src="logo-etatix-icon.png" alt="ETATIX">
+<span class="logo-text">ETATIX</span>
 </div>
 
 <div class="right">
 <div class="lang">🇮🇩 ID</div>
-<div class="btn"><i class="fa-solid fa-magnifying-glass"></i></div>
-<div class="btn"><i class="fa-solid fa-bars"></i></div>
+
+<div class="btn">
+<i class="fa-solid fa-magnifying-glass"></i>
 </div>
+
+<div class="btn">
+<i class="fa-solid fa-bars"></i>
+</div>
+</div>
+
 </nav>
 
+<!-- BANNER -->
 <div class="banner">
 <img src="banner-saya.png" alt="Banner Event">
 </div>
 
-<div class="badge"><i class="fa-solid fa-music"></i> Musik</div>
+<!-- CATEGORY -->
+<div class="badge">
+<i class="fa-solid fa-music"></i>
+Musik
+</div>
 
+<!-- TITLE -->
 <div class="title">
 <h1>Jomlo Festival 2026 Chapter Jogja</h1>
 </div>
 
+<!-- DETAIL -->
 <div class="card">
-<div class="section-title">Detail Acara</div>
+
+<div class="section-title">
+Detail Acara
+</div>
 
 <div class="detail">
-<div class="icon"><i class="fa-solid fa-calendar"></i></div>
+<div class="icon">
+<i class="fa-solid fa-calendar"></i>
+</div>
 <div>14 November 2026</div>
 </div>
 
 <div class="detail">
-<div class="icon"><i class="fa-solid fa-clock"></i></div>
+<div class="icon">
+<i class="fa-solid fa-clock"></i>
+</div>
 <div>15:00 - 23:00</div>
 </div>
 
 <div class="detail">
-<div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+<div class="icon">
+<i class="fa-solid fa-location-dot"></i>
+</div>
 <div>Yogyakarta, Kota Yogyakarta, Daerah Istimewa Yogyakarta</div>
 </div>
 
-<div class="section-title" style="margin-top:30px">Penyelenggara</div>
-<div class="organizer">
-<div class="organizer-logo">KP</div>
-<div><strong>Kontener Production</strong></div>
+<!-- ORGANIZER -->
+<div class="section-title" style="margin-top:30px;">
+Penyelenggara
 </div>
 
-<div class="section-title" style="margin-top:30px">Media Sosial</div>
+<div class="organizer">
+<div class="organizer-logo">
+KP
+</div>
+
+<div>
+<strong>Kontener Production</strong>
+</div>
+</div>
+
+<!-- SOCIAL -->
+<div class="section-title" style="margin-top:30px;">
+Media Sosial
+</div>
+
 <div class="social">
 <a href="#">Instagram</a>
 <a href="#">TikTok</a>
 <a href="#">Website</a>
 </div>
+
 </div>
 
+<!-- TAB -->
 <div class="tabs">
 <a href="#" class="active">Deskripsi</a>
 <a href="#">Syarat & Ketentuan</a>
 </div>
 
+<!-- CONTENT -->
 <div class="content">
-<h2>Deskripsi</h2>
-<p>Melalui irama yang mengalun dan langkah yang menari, Kontener Production kembali menghadirkan Jomlo Festival. Setelah sukses dengan ribuan pengunjung, festival ini hadir kembali dengan konsep yang lebih meriah bersama deretan bintang tamu terbaik.</p>
-<p>Jomlo Festival siap membawa pengalaman musik, hiburan dan kebersamaan yang tak terlupakan.</p>
 
-<h2 style="margin-top:30px">Syarat & Ketentuan</h2>
+<h2>Deskripsi</h2>
+
+<p>
+Melalui irama yang mengalun dan langkah yang menari,
+Kontener Production kembali menghadirkan Jomlo Festival.
+Setelah sukses dengan ribuan pengunjung, festival ini hadir
+kembali dengan konsep yang lebih meriah bersama deretan
+bintang tamu terbaik.
+</p>
+
+<p>
+Jomlo Festival siap membawa pengalaman musik, hiburan dan
+kebersamaan yang tak terlupakan.
+</p>
+
+<h2 style="margin-top:30px;">
+Syarat & Ketentuan
+</h2>
+
 <ol>
 <li>Tiket hanya berlaku untuk satu orang.</li>
 <li>Tiket yang sudah dibeli tidak dapat ditukar atau dikembalikan.</li>
 <li>Pengunjung wajib membawa identitas resmi.</li>
-<li>Dilarang membawa senjata tajam, narkotika, dan barang berbahaya.</li>
+<li>Dilarang membawa senjata tajam, narkotika dan barang berbahaya.</li>
 <li>Penyelenggara berhak menolak pengunjung yang melanggar aturan.</li>
 <li>Dengan membeli tiket, pengunjung dianggap menyetujui seluruh ketentuan acara.</li>
 </ol>
+
 </div>
 
+<!-- TICKET -->
 <div class="ticket-box">
+
 <div class="ticket-top">
 <div>Harga mulai dari</div>
 <div class="price">Rp50.000</div>
 </div>
-<a href="#" class="buy-btn"><i class="fa-solid fa-ticket"></i> Beli Tiket</a>
+
+<a href="#" class="buy-btn">
+<i class="fa-solid fa-ticket"></i>
+Beli Tiket
+</a>
+
 </div>
 
+<!-- FOOTER -->
 <footer>
-<div class="footer-logo">
-<img src="logo-etatix.png" alt="ETATIX">
+
+<div class="footer-brand">
+<img src="logo-etatix-icon.png" alt="ETATIX">
+<span>ETATIX</span>
 </div>
 
 <div class="footer-grid">
+
 <div>
 <div class="footer-title">ETATIX</div>
-<a class="footer-link" href="#">Tentang Kami</a>
-<a class="footer-link" href="#">Hubungi Kami</a>
-<a class="footer-link" href="#">FAQ</a>
+<a href="#" class="footer-link">Tentang Kami</a>
+<a href="#" class="footer-link">Hubungi Kami</a>
+<a href="#" class="footer-link">FAQ</a>
 </div>
 
 <div>
 <div class="footer-title">Sosial Media</div>
-<a class="footer-link" href="#">Instagram</a>
-<a class="footer-link" href="#">TikTok</a>
-<a class="footer-link" href="#">Facebook</a>
+<a href="#" class="footer-link">Instagram</a>
+<a href="#" class="footer-link">TikTok</a>
+<a href="#" class="footer-link">Facebook</a>
 </div>
+
 </div>
 
 <div class="copy">
 © 2026 ETATIX.ID - All Rights Reserved
 </div>
+
 </footer>
 
 </div>
+
 </body>
 </html>
