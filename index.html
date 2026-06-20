@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ETATIX ID - Event Ticketing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#111827;
+    padding-bottom:110px;
+}
+
+/* HEADER */
+.header{
+    background:#1236B8;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:42px;
+}
+
+.logo h2{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-actions{
+    display:flex;
+    gap:10px;
+}
+
+.circle-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#2450e6;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* HERO */
+.hero{
+    height:250px;
+    background:
+    linear-gradient(
+    rgba(0,0,0,.25),
+    rgba(0,0,0,.25)),
+    url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+}
+
+.hero-content{
+    padding:25px;
+    color:white;
+}
+
+.hero-content span{
+    background:#1d4ed8;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.hero-content h1{
+    margin-top:15px;
+    font-size:34px;
+}
+
+/* CARD */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.info-item{
+    display:flex;
+    gap:15px;
+    margin:18px 0;
+    align-items:flex-start;
+}
+
+.icon{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:#e8efff;
+    color:#2450e6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.info-item h4{
+    font-size:15px;
+    color:#6b7280;
+}
+
+.info-item p{
+    font-weight:600;
+}
+
+/* ORGANIZER */
+.organizer{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.organizer img{
+    width:60px;
+    border-radius:15px;
+}
+
+.social{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.social a{
+    text-decoration:none;
+    background:#eef3ff;
+    color:#2450e6;
+    padding:12px 18px;
+    border-radius:15px;
+    font-weight:600;
+}
+
+/* TABS */
+.tabs{
+    display:flex;
+    gap:20px;
+    border-bottom:2px solid #eee;
+    margin-bottom:20px;
+}
+
+.tabs button{
+    border:none;
+    background:none;
+    padding:15px 0;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.active{
+    color:#2450e6;
+    border-bottom:3px solid #2450e6;
+}
+
+/* CONTENT */
+.content h2{
+    margin-bottom:15px;
+}
+
+.content p{
+    line-height:1.8;
+    margin-bottom:15px;
+    color:#444;
+}
+
+/* STICKY FOOTER */
+.ticket-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:white;
+    box-shadow:0 -10px 30px rgba(0,0,0,.08);
+    padding:15px;
+}
+
+.ticket-wrap{
+    max-width:900px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.price{
+    font-size:14px;
+    color:#6b7280;
+}
+
+.price h2{
+    color:#111827;
+}
+
+.buy-btn{
+    background:#2450e6;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.buy-btn:hover{
+    background:#1236B8;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:24px;
+}
+
+.ticket-wrap{
+    flex-direction:column;
+    gap:15px;
+}
+
+.buy-btn{
+    width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="logo-etatix.png" alt="">
+            <h2>ETATIX</h2>
+        </div>
+
+        <div class="nav-actions">
+            <button class="circle-btn">🌐</button>
+            <button class="circle-btn">🔍</button>
+            <button class="circle-btn">☰</button>
+        </div>
+
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <span>PAMERAN</span>
+        <h1>ARTJOG 2026 - ARS LONGA GENERATIO</h1>
+    </div>
+</section>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Detail Acara</h2>
+
+        <div class="info-item">
+            <div class="icon">📅</div>
+            <div>
+                <h4>Tanggal</h4>
+                <p>19 Juni - 30 Agustus 2026</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="icon">🕒</div>
+            <div>
+                <h4>Jam Operasional</h4>
+                <p>10:00 - 22:00</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="icon">📍</div>
+            <div>
+                <h4>Lokasi</h4>
+                <p>Jogja National Museum, Yogyakarta</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Penyelenggara</h2>
+
+        <br>
+
+        <div class="organizer">
+            <img src="logo-etatix.png">
+            <div>
+                <h3>ETATIX EVENT ORGANIZER</h3>
+                <p>Official Event Partner</p>
+            </div>
+        </div>
+
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Website</a>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="tabs">
+            <button class="active">Deskripsi</button>
+            <button>Syarat & Ketentuan</button>
+        </div>
+
+        <div class="content">
+
+            <h2>ARTJOG 2026 - ARS LONGA GENERATIO</h2>
+
+            <p>
+                Selamat datang di ETATIX ID.
+                Nikmati pengalaman pembelian tiket yang cepat,
+                aman dan modern untuk berbagai acara, festival,
+                konser, pameran dan seminar di seluruh Indonesia.
+            </p>
+
+            <p>
+                ETATIX dirancang dengan teknologi modern untuk
+                memberikan kemudahan kepada pengunjung dan
+                penyelenggara acara dalam mengelola tiket,
+                registrasi peserta, QR Check-in, serta laporan
+                penjualan secara real-time.
+            </p>
+
+            <p>
+                Platform ini dapat dikembangkan menjadi sistem
+                ticketing profesional seperti Artatix, Loket,
+                Tiketapasaja, Eventbrite maupun Goers.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="ticket-bar">
+    <div class="ticket-wrap">
+
+        <div class="price">
+            Harga mulai dari
+            <h2>Rp50.000</h2>
+        </div>
+
+        <button class="buy-btn">
+            🎟️ Beli Tiket
+        </button>
+
+    </div>
+</div>
+
+</body>
+</html>
