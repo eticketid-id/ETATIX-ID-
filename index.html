@@ -110,6 +110,24 @@ display:none;z-index:3000
 }
 
 </style>
+
+<style id="v2-ticket-fix">
+@media (max-width:768px){
+  .ticket-box .buy-btn{display:none !important;}
+}
+@media (min-width:769px){
+  .mobile-buy{display:none !important;}
+}
+</style>
+
+
+<style id="tabs-v3">
+.tabs a.active{
+color:#111;
+border-bottom:3px solid #4562d8;
+}
+</style>
+
 </head>
 <body>
 
@@ -170,13 +188,13 @@ display:none;z-index:3000
 </div>
 
 <div class="tabs">
-<a href="#" class="active">Deskripsi</a>
-<a href="#">Syarat & Ketentuan</a>
+<a href="javascript:void(0)" class="active" id="tab-desc">Deskripsi</a>
+<a href="javascript:void(0)" id="tab-syarat">Syarat & Ketentuan</a>
 </div>
 
 
 <div class="content">
-<h2>Deskripsi</h2>
+<div id="panel-desc"><h2>Deskripsi</h2>
 
 <p>Jomlo Festival 2026 Chapter Jogja hadir sebagai perayaan musik, kreativitas, dan kebersamaan yang dirancang untuk menghadirkan pengalaman hiburan yang berbeda. Acara ini mempertemukan penonton dari berbagai daerah dalam satu malam penuh energi, pertunjukan spektakuler, dan suasana yang tidak terlupakan.</p>
 
@@ -211,7 +229,7 @@ display:none;z-index:3000
 <h2>Kebijakan Refund & Reschedule</h2>
 <p>Apabila terjadi perubahan jadwal karena keadaan tertentu, informasi resmi akan diumumkan melalui kanal resmi penyelenggara. Kebijakan refund dan reschedule mengikuti ketentuan yang ditetapkan oleh penyelenggara acara.</p>
 
-<h2 style="margin-top:30px">Syarat & Ketentuan</h2>
+</div><div id="panel-syarat" style="display:none;"><h2 style="margin-top:30px">Syarat & Ketentuan</h2>
 <ol>
 <li>Tiket yang telah dibeli tidak dapat dibatalkan atau diuangkan kembali kecuali terdapat kebijakan khusus dari penyelenggara.</li>
 <li>Satu tiket hanya berlaku untuk satu orang dan satu kali masuk.</li>
@@ -237,7 +255,7 @@ display:none;z-index:3000
 <div>Harga mulai dari</div>
 <div class="price">Rp50.000</div>
 </div>
-<a href="#" class="buy-btn"><i class="fa-solid fa-ticket"></i> Beli Tiket</a>
+<a href="tiket.html" class="buy-btn"><i class="fa-solid fa-ticket"></i> Beli Tiket</a>
 </div>
 
 <footer>
@@ -268,7 +286,7 @@ display:none;z-index:3000
 
 </div>
 
-<div class="mobile-buy"><a href="#"><i class="fa-solid fa-ticket"></i> Beli Tiket Sekarang</a></div>
+<div class="mobile-buy"><a href="tiket.html"><i class="fa-solid fa-ticket"></i> Beli Tiket Sekarang</a></div>
 <script>
 const target=new Date("Nov 14, 2026 15:00:00").getTime();
 setInterval(()=>{const now=new Date().getTime();const distance=target-now;
@@ -325,6 +343,51 @@ navigator.share({title:document.title,url:window.location.href});
 copyLink();
 }
 }
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+const desc=document.getElementById('panel-desc');
+const syarat=document.getElementById('panel-syarat');
+const t1=document.getElementById('tab-desc');
+const t2=document.getElementById('tab-syarat');
+
+if(t1&&t2&&desc&&syarat){
+t1.onclick=function(){
+desc.style.display='block';
+syarat.style.display='none';
+t1.classList.add('active');
+t2.classList.remove('active');
+};
+t2.onclick=function(){
+desc.style.display='none';
+syarat.style.display='block';
+t2.classList.add('active');
+t1.classList.remove('active');
+};
+}
+});
+</script>
+
+
+<style id="redirect-smooth">
+.buy-btn,.mobile-buy a{
+transition:all .25s ease;
+}
+.buy-btn:active,.mobile-buy a:active{
+transform:scale(.98);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+document.querySelectorAll('.buy-btn,.mobile-buy a').forEach(btn=>{
+btn.addEventListener('click',function(){
+this.style.opacity='0.9';
+});
+});
+});
 </script>
 
 </body>
